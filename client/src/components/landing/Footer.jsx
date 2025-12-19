@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Footer() {
     return (
-        <footer className="bg-primary text-white py-8 border-t border-white/10 relative overflow-hidden">
+        <footer className="bg-[#3270A6] text-white py-8 border-t border-white/10 relative overflow-hidden">
             <motion.div
                 className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl"
                 animate={{ x: [0, 30, 0], y: [0, -30, 0] }}
@@ -14,7 +14,7 @@ export function Footer() {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-2">
                     {/* Logo */}
                     <motion.img
-                        src="/b_d_Consulting-Picsart-AiImageEnhancer.png"
+                        src="/b_d_Consulting-Picsart-AiImageEnhancer.webp"
                         alt="b&d Consulting"
                         className="h-28 object-contain"
                         whileHover={{ scale: 1.05 }}

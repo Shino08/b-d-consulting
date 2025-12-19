@@ -1,8 +1,8 @@
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { About } from "@/components/landing/About";
-import { Services } from "@/components/landing/Services";
 import { Experience } from "@/components/landing/Experience";
+import { Services } from "@/components/landing/Services";
 import { Contact } from "@/components/landing/Contact";
 import { Footer } from "@/components/landing/Footer";
 

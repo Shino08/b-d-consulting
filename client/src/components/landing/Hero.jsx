@@ -44,7 +44,7 @@ export function Hero() {
             {/* Background with overlay */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/Hero.png"
+                    src="/Hero.webp"
                     alt="Industrial Background"
                     className="w-full h-full object-cover"
                 />

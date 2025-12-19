@@ -220,27 +220,6 @@ export function Contact() {
                                     )}
                                 />
 
-                                <FormField
-                                    control={form.control}
-                                    name="consent"
-                                    render={({ field }) => (
-                                        <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 hover:bg-slate-50 transition-colors">
-                                            <FormControl>
-                                                <Checkbox
-                                                    checked={field.value}
-                                                    onCheckedChange={field.onChange}
-                                                    data-testid="checkbox-consent"
-                                                />
-                                            </FormControl>
-                                            <div className="space-y-1 leading-none">
-                                                <FormLabel>
-                                                    Acepto ser contactado por b&d Consulting
-                                                </FormLabel>
-                                            </div>
-                                        </FormItem>
-                                    )}
-                                />
-
                                 <motion.div whileHover={{ scale: 1.02 }}>
                                     <Button
                                         type="submit"

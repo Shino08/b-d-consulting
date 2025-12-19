@@ -9,7 +9,6 @@ const navItems = [
     { name: "Nosotros", href: "#about" },
     { name: "Servicios", href: "#services" },
     { name: "Experiencia", href: "#experience" },
-    { name: "Divisiones", href: "#divisions" },
     { name: "Contacto", href: "#contact" },
 ];
 
@@ -37,8 +36,8 @@ export function Header() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled
-                    ? "bg-white/95 glass-effect shadow-md py-2"
-                    : "bg-transparent py-2"
+                    ? "bg-white/95 glass-effect shadow-md"
+                    : "bg-transparent"
             )}
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -48,9 +47,9 @@ export function Header() {
                     className="flex items-center gap-2 group"
                 >
                     <img
-                        src="/b_d_Consulting-Picsart-AiImageEnhancer.png"
+                        src="/b_d_Consulting-Picsart-AiImageEnhancer.webp"
                         alt="b&d Consulting"
-                        className="h-20 md:h-24 object-contain transition-transform duration-300 group-hover:scale-105"
+                        className="h-28 md:h-28 object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                 </a>
 

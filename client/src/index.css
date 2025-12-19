@@ -10,67 +10,67 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   /* Brand Identity Color Palette */
-  /* Primary: Dark Blue - RGB 4/52/135 (#043487) */
-  /* Secondary: Medium Blue - RGB 19/105/161 (#1369A1) */
-  /* Accent: Terracotta Orange - RGB 195/88/59 (#C3583B) */
-  /* Neutral: Light Blue-Gray - RGB 184/193/215 (#B8C1D7) */
-  /* Text Gray: RGB 104/102/114 (#686672) */
+  /* Primary: Dark Blue #1F3A8C */
+  /* Secondary: Medium Blue #3270A6 */
+  /* Accent: Terracotta Orange #BF5841 */
+  /* Neutral: Light Blue-Gray #BFC7D9 */
+  /* Text Gray: #6A6873 */
 
-  --color-background: hsl(218 50% 97%);
-  /* Very light blue */
-  --color-foreground: hsl(218 70% 20%);
+  --color-background: #f5f7fa;
+  /* Very light blue-gray */
+  --color-foreground: #1F3A8C;
   /* Dark blue text */
 
-  --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(218 94% 27%);
+  --color-card: #ffffff;
+  --color-card-foreground: #1F3A8C;
 
-  --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(218 94% 27%);
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1F3A8C;
 
-  --color-primary: hsl(218 94% 27%);
-  /* Dark Blue #043487 */
-  --color-primary-foreground: hsl(0 0% 100%);
-
-  --color-secondary: hsl(200 79% 35%);
-  /* Medium Blue #1369A1 */
-  --color-secondary-foreground: hsl(0 0% 100%);
-
-  --color-muted: hsl(218 50% 92%);
-  /* Light blue muted */
-  --color-muted-foreground: hsl(218 50% 35%);
-  /* Blue-gray text */
-
-  --color-accent: hsl(13 53% 50%);
-  /* Terracotta Orange #C3583B */
-  --color-accent-foreground: hsl(0 0% 100%);
-
-  --color-destructive: hsl(0 84% 60%);
-  --color-destructive-foreground: hsl(0 0% 98%);
-
-  --color-border: hsl(218 50% 85%);
-  /* Light blue border */
-  --color-input: hsl(218 50% 90%);
-  --color-ring: hsl(218 94% 27%);
-
-  --color-chart-1: hsl(218 94% 27%);
+  --color-primary: #1F3A8C;
   /* Dark Blue */
-  --color-chart-2: hsl(200 79% 35%);
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #3270A6;
   /* Medium Blue */
-  --color-chart-3: hsl(13 53% 50%);
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #BFC7D9;
+  /* Light blue-gray muted */
+  --color-muted-foreground: #6A6873;
+  /* Gray text */
+
+  --color-accent: #BF5841;
+  /* Terracotta Orange */
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #BFC7D9;
+  /* Light blue-gray border */
+  --color-input: #e8ecf2;
+  --color-ring: #3270A6;
+
+  --color-chart-1: #1F3A8C;
+  /* Dark Blue */
+  --color-chart-2: #3270A6;
+  /* Medium Blue */
+  --color-chart-3: #BF5841;
   /* Terracotta */
-  --color-chart-4: hsl(223 33% 78%);
+  --color-chart-4: #BFC7D9;
   /* Light Blue-Gray */
-  --color-chart-5: hsl(250 6% 42%);
+  --color-chart-5: #6A6873;
   /* Gray */
 
-  --color-sidebar: hsl(218 94% 27%);
-  --color-sidebar-foreground: hsl(0 0% 98%);
-  --color-sidebar-primary: hsl(13 53% 50%);
-  --color-sidebar-primary-foreground: hsl(0 0% 100%);
-  --color-sidebar-accent: hsl(200 79% 35%);
-  --color-sidebar-accent-foreground: hsl(0 0% 100%);
-  --color-sidebar-border: hsl(218 94% 20%);
-  --color-sidebar-ring: hsl(13 53% 50%);
+  --color-sidebar: #1F3A8C;
+  --color-sidebar-foreground: #ffffff;
+  --color-sidebar-primary: #BF5841;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #3270A6;
+  --color-sidebar-accent-foreground: #ffffff;
+  --color-sidebar-border: #162d6d;
+  --color-sidebar-ring: #BF5841;
 
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Montserrat', sans-serif;

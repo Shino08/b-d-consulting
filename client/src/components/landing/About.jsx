@@ -6,32 +6,32 @@ const values = [
     {
         name: "Respeto",
         description: "Valoramos a cada persona y organización con la que trabajamos.",
-        image: "/Respeto.jpg"
+        image: "/Respeto.webp"
     },
     {
         name: "Responsabilidad",
         description: "Cumplimos con nuestros compromisos de manera oportuna y eficiente.",
-        image: "/Responsabilidad.jpg"
+        image: "/Responsabilidad.webp"
     },
     {
         name: "Compromiso",
         description: "Nos dedicamos plenamente a alcanzar los objetivos de nuestros clientes.",
-        image: "/Compromiso.jpg"
+        image: "/Compromiso.webp"
     },
     {
         name: "Integridad",
         description: "Actuamos con honestidad y transparencia en todas nuestras operaciones.",
-        image: "/Integridad.jpg"
+        image: "/Integridad.webp"
     },
     {
         name: "Profesionalidad",
         description: "Aplicamos los más altos estándares técnicos y éticos en cada proyecto.",
-        image: "/Personalidad.jpg"
+        image: "/Personalidad.webp"
     },
     {
         name: "Confianza",
         description: "Construimos relaciones duraderas basadas en resultados comprobados.",
-        image: "/Confianza.jpg"
+        image: "/Confianza.webp"
     },
 ];
 

@@ -9,7 +9,7 @@ const projects = [
         client: "Petrocedeño",
         desc: "Mejorador de crudo - Ingeniería especializada para bombas centrífugas y PCP (100-1200 HP).",
         category: "Ingeniería",
-        image: "/Sellos.jpg"
+        image: "/Sellos.webp"
     },
     {
         year: "2024",
@@ -17,7 +17,7 @@ const projects = [
         client: "Corporación B&D",
         desc: "Desarrollo completo de ingeniería de detalles para construcción en Paraguaná.",
         category: "Proyectos",
-        image: "/Detalles.jpg"
+        image: "/Detalles.webp"
     },
     {
         year: "2023-24",
@@ -25,7 +25,7 @@ const projects = [
         client: "PDVSA Petrowarao",
         desc: "Recuperación de confiabilidad operativa e instalación de generadores eléctricos en Campo Pedernales.",
         category: "Mantenimiento",
-        image: "/Delta.jpg"
+        image: "/Delta.webp"
     },
     {
         year: "2022-23",
@@ -33,7 +33,7 @@ const projects = [
         client: "Aserradero Dismak",
         desc: "Estudios conceptuales para planta de generación energética basada en biomasa.",
         category: "Ingeniería",
-        image: "/Biomasa.jpg"
+        image: "/Biomasa.webp"
     },
     {
         year: "2022",
@@ -41,7 +41,7 @@ const projects = [
         client: "Pequiven / Fertinitro",
         desc: "Investigación técnica y análisis de fallas en múltiples proyectos críticos.",
         category: "Confiabilidad",
-        image: "/Analisis.jpg"
+        image: "/Analisis.webp"
     },
     {
         year: "2022",
@@ -49,7 +49,7 @@ const projects = [
         client: "Pequiven",
         desc: "Soporte especializado en arranque de plantas de Urea, Amoniaco y Servicios Industriales II.",
         category: "Operaciones",
-        image: "/Arranque.jpg"
+        image: "/Arranque.webp"
     },
 ];
 
