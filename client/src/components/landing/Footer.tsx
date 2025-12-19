@@ -1,19 +1,49 @@
+import { motion } from "framer-motion";
+
 export function Footer() {
   return (
-    <footer className="bg-primary text-white py-12 border-t border-white/10">
-      <div className="container px-4 md:px-6">
+    <footer className="bg-primary text-white py-12 border-t border-white/10 relative overflow-hidden">
+      <motion.div 
+        className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
+        animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
+        transition={{ duration: 15, repeat: Infinity }}
+      />
+      
+      <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 bg-white rounded flex items-center justify-center text-primary font-bold">
-              b&d
-            </div>
-            <span className="font-display font-bold text-lg">b&d Consulting</span>
-          </div>
+          <motion.div 
+            className="flex items-center gap-2 group"
+            whileHover={{ scale: 1.05 }}
+          >
+            <img 
+              src="/logo.svg" 
+              alt="b&d Consulting" 
+              className="h-8 object-contain invert"
+            />
+          </motion.div>
           
           <nav className="flex gap-6 text-sm text-white/70">
-            <a href="#" className="hover:text-white transition-colors">Aviso Legal</a>
-            <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
-            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+            <motion.a 
+              href="#" 
+              className="hover:text-white transition-colors"
+              whileHover={{ x: 2 }}
+            >
+              Aviso Legal
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="hover:text-white transition-colors"
+              whileHover={{ x: 2 }}
+            >
+              Política de Privacidad
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="hover:text-white transition-colors"
+              whileHover={{ x: 2 }}
+            >
+              LinkedIn
+            </motion.a>
           </nav>
         </div>
         

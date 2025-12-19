@@ -21,6 +21,7 @@ const services = [
     id: "ae",
     icon: Building2,
     title: "Asesoramiento Empresarial",
+    color: "from-blue-500 to-blue-600",
     items: [
       "Informes para toma de decisiones técnicas y financieras",
       "Elaboración de avalúos y anteproyectos",
@@ -34,6 +35,7 @@ const services = [
     id: "ic",
     icon: Calculator,
     title: "Ingeniería de Costos",
+    color: "from-purple-500 to-purple-600",
     items: [
       "Análisis de precios unitarios y presupuestos",
       "Documentación técnica y legal para ofertas",
@@ -45,6 +47,7 @@ const services = [
     id: "ip",
     icon: DraftingCompass,
     title: "Ingeniería de Proyectos",
+    color: "from-orange-500 to-orange-600",
     items: [
       "Gestión de proyectos (Visualización a Puesta en Marcha)",
       "Ingeniería conceptual, básica y de detalles",
@@ -58,6 +61,7 @@ const services = [
     id: "conf",
     icon: Wrench,
     title: "Confiabilidad y Mantenimiento",
+    color: "from-red-500 to-red-600",
     items: [
       "Análisis de Modos y Efectos de Falla (AMEF)",
       "Análisis de Criticidad (AC)",
@@ -70,6 +74,7 @@ const services = [
     id: "end",
     icon: Search,
     title: "Inspección y Ensayos No Destructivos",
+    color: "from-green-500 to-green-600",
     items: [
       "Inspección Ultrasónica (UT) y Radiografía (RT)",
       "Partículas Magnéticas (MT) y Líquidos Penetrantes (PT)",
@@ -82,6 +87,7 @@ const services = [
     id: "risk",
     icon: ShieldAlert,
     title: "Ingeniería de Riesgos",
+    color: "from-yellow-500 to-yellow-600",
     items: [
       "Estudios HAZOP y Sistemas SIL",
       "Impacto ambiental y cumplimiento legal SHA",
@@ -93,6 +99,7 @@ const services = [
     id: "sys",
     icon: Monitor,
     title: "Sistemas y Computación",
+    color: "from-teal-500 to-teal-600",
     items: [
       "Consultoría en sistemas de información",
       "Soporte técnico y seguridad informática",
@@ -104,6 +111,7 @@ const services = [
     id: "qa",
     icon: Award,
     title: "Calidad y Normalización",
+    color: "from-pink-500 to-pink-600",
     items: [
       "Implantación ISO-9000 y ISO-55000",
       "Planes de Inspección y Ensayo (PIE)",
@@ -114,42 +122,76 @@ const services = [
 ];
 
 export function Services() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
   return (
-    <section id="services" className="py-24 bg-slate-50">
-      <div className="container px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <section id="services" className="py-24 bg-white relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -mr-48" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -ml-48" />
+
+      <div className="container px-4 md:px-6 relative z-10">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Servicios Especializados</h2>
           <p className="text-lg text-muted-foreground">
             Ofrecemos un portafolio integral de soluciones técnicas y gerenciales adaptadas a su industria.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {services.map((service, index) => (
+        <motion.div 
+          className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {services.map((service) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="service-card-hover"
             >
-              <Accordion type="single" collapsible className="w-full bg-white rounded-lg shadow-sm border px-6">
+              <Accordion type="single" collapsible className="w-full bg-white rounded-xl shadow-sm border border-border hover:border-secondary/30 overflow-hidden transition-all px-6">
                 <AccordionItem value={service.id} className="border-none">
-                  <AccordionTrigger className="hover:no-underline py-6">
+                  <AccordionTrigger className="hover:no-underline py-6 group">
                     <div className="flex items-center gap-4 text-left">
-                      <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary shrink-0">
-                        <service.icon className="w-5 h-5" />
+                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center text-white shrink-0 group-hover:shadow-lg group-hover:scale-110 transition-all`}>
+                        <service.icon className="w-6 h-6" />
                       </div>
-                      <span className="text-lg font-semibold text-primary">{service.title}</span>
+                      <span className="text-lg font-semibold text-primary group-hover:text-secondary transition-colors">{service.title}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-6 pl-[4.5rem]">
+                  <AccordionContent className="pb-6 pl-[4.5rem] animate-in fade-in slide-in-from-top-2">
                     <ul className="space-y-2">
                       {service.items.map((item, i) => (
-                        <li key={i} className="text-muted-foreground flex items-start gap-2 relative pl-4">
-                          <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-secondary rounded-full" />
+                        <motion.li 
+                          key={i} 
+                          className="text-muted-foreground flex items-start gap-2 relative pl-4 group hover:text-secondary transition-colors"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: i * 0.1 }}
+                        >
+                          <span className={`absolute left-0 top-2 w-1.5 h-1.5 bg-secondary rounded-full group-hover:bg-accent group-hover:scale-150 transition-all`} />
                           {item}
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </AccordionContent>
@@ -157,7 +199,7 @@ export function Services() {
               </Accordion>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -36,22 +36,22 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"
+        isScrolled 
+          ? "bg-white/95 glass-effect shadow-md py-3" 
+          : "bg-transparent py-4"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a 
           href="#" 
           onClick={(e) => scrollToSection(e, "#hero")}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 group"
         >
-          {/* Logo placeholder - using text/icon for now if image not ready */}
-          <div className="h-10 w-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            b&d
-          </div>
-          <span className={cn("font-display font-bold text-xl", isScrolled ? "text-primary" : "text-white")}>
-            Consulting
-          </span>
+          <img 
+            src="/logo.svg" 
+            alt="b&d Consulting" 
+            className="h-10 md:h-12 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -62,7 +62,7 @@ export function Header() {
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-secondary",
+                "text-sm font-medium transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary hover:after:w-full after:transition-all",
                 isScrolled ? "text-primary" : "text-white/90"
               )}
             >
@@ -70,7 +70,7 @@ export function Header() {
             </a>
           ))}
           <Button 
-            className="bg-secondary hover:bg-secondary/90 text-white"
+            className="bg-accent hover:bg-accent/90 text-white font-semibold interactive-hover"
             onClick={(e) => scrollToSection(e as any, "#contact")}
           >
             Solicitar Consultoría
@@ -97,7 +97,7 @@ export function Header() {
                 </a>
               ))}
               <Button 
-                className="w-full bg-secondary hover:bg-secondary/90 text-white"
+                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold"
                 onClick={(e) => scrollToSection(e as any, "#contact")}
               >
                 Solicitar Consultoría
