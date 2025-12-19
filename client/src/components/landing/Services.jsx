@@ -1,12 +1,12 @@
 import {
-    Building2,
-    Calculator,
-    DraftingCompass,
-    Wrench,
-    Search,
-    ShieldAlert,
-    Monitor,
-    Award
+    Briefcase,
+    Coins,
+    Compass,
+    Settings,
+    ScanSearch,
+    Shield,
+    Laptop,
+    BadgeCheck
 } from "lucide-react";
 import {
     Accordion,
@@ -19,9 +19,9 @@ import { motion } from "framer-motion";
 const services = [
     {
         id: "ae",
-        icon: Building2,
+        icon: Briefcase,
         title: "Asesoramiento Empresarial",
-        color: "from-blue-500 to-blue-600",
+        color: "bg-blue-500",
         items: [
             "Informes para toma de decisiones técnicas y financieras",
             "Elaboración de avalúos y anteproyectos",
@@ -33,9 +33,9 @@ const services = [
     },
     {
         id: "ic",
-        icon: Calculator,
+        icon: Coins,
         title: "Ingeniería de Costos",
-        color: "from-purple-500 to-purple-600",
+        color: "bg-violet-500",
         items: [
             "Análisis de precios unitarios y presupuestos",
             "Documentación técnica y legal para ofertas",
@@ -45,9 +45,9 @@ const services = [
     },
     {
         id: "ip",
-        icon: DraftingCompass,
+        icon: Compass,
         title: "Ingeniería de Proyectos",
-        color: "from-orange-500 to-orange-600",
+        color: "bg-amber-500",
         items: [
             "Gestión de proyectos (Visualización a Puesta en Marcha)",
             "Ingeniería conceptual, básica y de detalles",
@@ -59,9 +59,9 @@ const services = [
     },
     {
         id: "conf",
-        icon: Wrench,
+        icon: Settings,
         title: "Confiabilidad y Mantenimiento",
-        color: "from-red-500 to-red-600",
+        color: "bg-rose-500",
         items: [
             "Análisis de Modos y Efectos de Falla (AMEF)",
             "Análisis de Criticidad (AC)",
@@ -72,9 +72,9 @@ const services = [
     },
     {
         id: "end",
-        icon: Search,
+        icon: ScanSearch,
         title: "Inspección y Ensayos No Destructivos",
-        color: "from-green-500 to-green-600",
+        color: "bg-emerald-500",
         items: [
             "Inspección Ultrasónica (UT) y Radiografía (RT)",
             "Partículas Magnéticas (MT) y Líquidos Penetrantes (PT)",
@@ -85,9 +85,9 @@ const services = [
     },
     {
         id: "risk",
-        icon: ShieldAlert,
+        icon: Shield,
         title: "Ingeniería de Riesgos",
-        color: "from-yellow-500 to-yellow-600",
+        color: "bg-yellow-500",
         items: [
             "Estudios HAZOP y Sistemas SIL",
             "Impacto ambiental y cumplimiento legal SHA",
@@ -97,9 +97,9 @@ const services = [
     },
     {
         id: "sys",
-        icon: Monitor,
+        icon: Laptop,
         title: "Sistemas y Computación",
-        color: "from-teal-500 to-teal-600",
+        color: "bg-cyan-500",
         items: [
             "Consultoría en sistemas de información",
             "Soporte técnico y seguridad informática",
@@ -109,9 +109,9 @@ const services = [
     },
     {
         id: "qa",
-        icon: Award,
+        icon: BadgeCheck,
         title: "Calidad y Normalización",
-        color: "from-pink-500 to-pink-600",
+        color: "bg-pink-500",
         items: [
             "Implantación ISO-9000 y ISO-55000",
             "Planes de Inspección y Ensayo (PIE)",
@@ -154,51 +154,53 @@ export function Services() {
                 </motion.div>
 
                 <motion.div
-                    className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+                    className="max-w-5xl mx-auto"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    {services.map((service) => (
-                        <motion.div
-                            key={service.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="service-card-hover"
-                        >
-                            <Accordion type="single" collapsible className="w-full bg-white rounded-xl shadow-sm border border-border hover:border-secondary/30 overflow-hidden transition-all px-6">
-                                <AccordionItem value={service.id} className="border-none">
-                                    <AccordionTrigger className="hover:no-underline py-6 group">
+                    <Accordion type="single" collapsible className="grid md:grid-cols-2 gap-4">
+                        {services.map((service) => (
+                            <motion.div
+                                key={service.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.4 }}
+                            >
+                                <AccordionItem
+                                    value={service.id}
+                                    className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300 overflow-hidden px-5 data-[state=open]:shadow-lg data-[state=open]:border-gray-200"
+                                >
+                                    <AccordionTrigger className="hover:no-underline py-5 group">
                                         <div className="flex items-center gap-4 text-left">
-                                            <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center text-white shrink-0 group-hover:shadow-lg group-hover:scale-110 transition-all`}>
-                                                <service.icon className="w-6 h-6" />
+                                            <div className={`w-10 h-10 rounded-lg ${service.color} flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform duration-300`}>
+                                                <service.icon className="w-5 h-5" strokeWidth={1.5} />
                                             </div>
-                                            <span className="text-lg font-semibold text-primary group-hover:text-secondary transition-colors">{service.title}</span>
+                                            <span className="text-base font-medium text-gray-800 group-hover:text-gray-900 transition-colors">{service.title}</span>
                                         </div>
                                     </AccordionTrigger>
-                                    <AccordionContent className="pb-6 pl-[4.5rem] animate-in fade-in slide-in-from-top-2">
+                                    <AccordionContent className="pb-5 pl-14">
                                         <ul className="space-y-2">
                                             {service.items.map((item, i) => (
                                                 <motion.li
                                                     key={i}
-                                                    className="text-muted-foreground flex items-start gap-2 relative pl-4 group hover:text-secondary transition-colors"
+                                                    className="text-gray-600 text-sm flex items-start gap-2.5 group/item hover:text-gray-800 transition-colors"
                                                     initial={{ opacity: 0, x: -10 }}
                                                     animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: i * 0.1 }}
+                                                    transition={{ delay: i * 0.08 }}
                                                 >
-                                                    <span className={`absolute left-0 top-2 w-1.5 h-1.5 bg-secondary rounded-full group-hover:bg-accent group-hover:scale-150 transition-all`} />
+                                                    <span className="w-1 h-1 bg-gray-400 rounded-full mt-2 shrink-0 group-hover/item:bg-gray-600 transition-colors" />
                                                     {item}
                                                 </motion.li>
                                             ))}
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>
-                            </Accordion>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        ))}
+                    </Accordion>
                 </motion.div>
             </div>
         </section>

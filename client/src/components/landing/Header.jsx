@@ -48,9 +48,9 @@ export function Header() {
                     className="flex items-center gap-2 group"
                 >
                     <img
-                        src="/logo.svg"
+                        src="/b_d_Consulting-Picsart-AiImageEnhancer.png"
                         alt="b&d Consulting"
-                        className="h-10 md:h-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                        className="h-12 md:h-14 object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                 </a>
 
