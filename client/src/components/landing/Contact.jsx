@@ -12,26 +12,15 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 const formSchema = z.object({
     name: z.string().min(2, "El nombre es requerido"),
-    company: z.string().min(2, "La empresa es requerida"),
     email: z.string().email("Email inválido"),
     phone: z.string().min(6, "Teléfono requerido"),
-    service: z.string().min(1, "Seleccione un servicio"),
-    message: z.string().min(10, "Cuéntenos un poco más sobre su proyecto"),
-    consent: z.boolean().refine((val) => val === true, "Debe aceptar el procesamiento de datos"),
+    message: z.string().min(10, "Cuéntenos sobre su proyecto"),
 });
 
 export function Contact() {
@@ -40,12 +29,9 @@ export function Contact() {
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: "",
-            company: "",
             email: "",
             phone: "",
-            service: "",
             message: "",
-            consent: false,
         },
     });
 
@@ -67,7 +53,7 @@ export function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 bg-white relative overflow-hidden">
+        <section id="contact" className="py-16 bg-white relative overflow-hidden">
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
 
             <div className="container px-4 md:px-6 relative z-10 mx-auto max-w-7xl">
@@ -136,41 +122,26 @@ export function Contact() {
                     </motion.div>
 
                     <motion.div
-                        className="bg-white p-8 rounded-xl shadow-sm border"
+                        className="bg-white p-6 rounded-xl shadow-sm border"
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
                         <Form {...form}>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-4">
-                                    <FormField
-                                        control={form.control}
-                                        name="name"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel>Nombre Completo</FormLabel>
-                                                <FormControl>
-                                                    <Input placeholder="Juan Pérez" {...field} data-testid="input-name" />
-                                                </FormControl>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <FormField
-                                        control={form.control}
-                                        name="company"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel>Empresa</FormLabel>
-                                                <FormControl>
-                                                    <Input placeholder="Nombre de su empresa" {...field} data-testid="input-company" />
-                                                </FormControl>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                </div>
+                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7">
+                                <FormField
+                                    control={form.control}
+                                    name="name"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Nombre Completo</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Juan Pérez" {...field} data-testid="input-name" />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
 
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <FormField
@@ -210,7 +181,7 @@ export function Contact() {
                                             <FormControl>
                                                 <Textarea
                                                     placeholder="Describa brevemente su necesidad o proyecto..."
-                                                    className="min-h-[120px]"
+                                                    className="min-h-[100px]"
                                                     {...field}
                                                     data-testid="textarea-message"
                                                 />
@@ -220,15 +191,13 @@ export function Contact() {
                                     )}
                                 />
 
-                                <motion.div whileHover={{ scale: 1.02 }}>
-                                    <Button
-                                        type="submit"
-                                        className="w-full bg-accent hover:bg-accent/90 text-white text-lg h-12 font-semibold"
-                                        data-testid="button-submit-contact"
-                                    >
-                                        Enviar Solicitud
-                                    </Button>
-                                </motion.div>
+                                <Button
+                                    type="submit"
+                                    className="w-full bg-accent hover:bg-accent/90 text-white h-11 font-semibold"
+                                    data-testid="button-submit-contact"
+                                >
+                                    Enviar Solicitud
+                                </Button>
                             </form>
                         </Form>
                     </motion.div>

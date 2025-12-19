@@ -4,6 +4,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
+    "preview": "vite preview",
     "dev:client": "vite dev --port 5000",
     "dev": "NODE_ENV=development node --import tsx server/index.js",
     "build": "node --import tsx script/build.js",
