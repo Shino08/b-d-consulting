@@ -116,13 +116,21 @@ export function Contact() {
                                 </div>
                             </motion.div>
 
-                            {/* Placeholder Map */}
+                            {/* Embedded Map */}
                             <motion.div
-                                className="w-full h-48 bg-slate-200 rounded-lg overflow-hidden flex items-center justify-center text-muted-foreground hover:bg-slate-300 transition-colors group"
+                                className="w-full h-48 rounded-lg overflow-hidden shadow-md"
                                 whileHover={{ scale: 1.02 }}
                             >
-                                <MapPin className="w-8 h-8 opacity-20 group-hover:opacity-40 transition-opacity" />
-                                <span className="ml-2 opacity-50 group-hover:opacity-70 transition-opacity">Mapa de Ubicación</span>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31364.76836540653!2d-68.02!3d10.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8067e76e4f7e4f%3A0x1234567890abcdef!2sEl%20Trigal%2C%20Valencia%2C%20Carabobo%2C%20Venezuela!5e0!3m2!1ses!2s!4v1234567890"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Ubicación b&d Consulting - Valencia, Venezuela"
+                                ></iframe>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -170,7 +178,7 @@ export function Contact() {
                                         name="email"
                                         render={({ field }) => (
                                             <FormItem>
-                                                <FormLabel>Email Corporativo</FormLabel>
+                                                <FormLabel>Correo</FormLabel>
                                                 <FormControl>
                                                     <Input placeholder="juan@empresa.com" {...field} data-testid="input-email" />
                                                 </FormControl>
