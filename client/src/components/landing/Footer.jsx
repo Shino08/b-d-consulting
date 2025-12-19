@@ -16,7 +16,7 @@ export function Footer() {
                     <motion.img
                         src="/b_d_Consulting-Picsart-AiImageEnhancer.webp"
                         alt="b&d Consulting"
-                        className="h-28 object-contain"
+                        className="h-16 object-contain"
                         whileHover={{ scale: 1.05 }}
                     />
 

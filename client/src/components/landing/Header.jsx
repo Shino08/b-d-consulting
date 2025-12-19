@@ -49,7 +49,7 @@ export function Header() {
                     <img
                         src="/b_d_Consulting-Picsart-AiImageEnhancer.webp"
                         alt="b&d Consulting"
-                        className="h-28 md:h-28 object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="h-16 object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                 </a>
 

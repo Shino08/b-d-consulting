@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -62,6 +62,14 @@ const stats = [
 
 export function Experience() {
     const [selectedProject, setSelectedProject] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setSelectedProject((prev) => (prev + 1) % projects.length);
+        }, 7000); // Change project every 5 seconds
+
+        return () => clearInterval(timer);
+    }, []);
 
     return (
         <section id="experience" className="py-24 bg-slate-50 relative overflow-hidden">
