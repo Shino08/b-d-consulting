@@ -195,34 +195,6 @@ export function Contact() {
 
                                 <FormField
                                     control={form.control}
-                                    name="service"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Área de Interés</FormLabel>
-                                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                                <FormControl>
-                                                    <SelectTrigger data-testid="select-service">
-                                                        <SelectValue placeholder="Seleccione un servicio" />
-                                                    </SelectTrigger>
-                                                </FormControl>
-                                                <SelectContent>
-                                                    <SelectItem value="asesoria">Asesoramiento Empresarial</SelectItem>
-                                                    <SelectItem value="costos">Ingeniería de Costos</SelectItem>
-                                                    <SelectItem value="proyectos">Ingeniería de Proyectos</SelectItem>
-                                                    <SelectItem value="confiabilidad">Confiabilidad y Mantenimiento</SelectItem>
-                                                    <SelectItem value="end">Inspección y END</SelectItem>
-                                                    <SelectItem value="riesgos">Ingeniería de Riesgos</SelectItem>
-                                                    <SelectItem value="sistemas">Sistemas y Computación</SelectItem>
-                                                    <SelectItem value="calidad">Calidad y Normalización</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-
-                                <FormField
-                                    control={form.control}
                                     name="message"
                                     render={({ field }) => (
                                         <FormItem>

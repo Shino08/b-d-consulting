@@ -9,57 +9,72 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Corporate Color Scheme from Brochure */
-  /* Primary: Dark Blue/Black - #1a1a1a */
-  /* Secondary: Professional Blue - #0066cc */
-  /* Accent: Energy Orange - #ff8c00 */
-  
-  --color-background: hsl(0 0% 100%);
-  --color-foreground: hsl(0 0% 13%); /* Nearly black */
+  /* Brand Identity Color Palette */
+  /* Primary: Dark Blue - RGB 4/52/135 (#043487) */
+  /* Secondary: Medium Blue - RGB 19/105/161 (#1369A1) */
+  /* Accent: Terracotta Orange - RGB 195/88/59 (#C3583B) */
+  /* Neutral: Light Blue-Gray - RGB 184/193/215 (#B8C1D7) */
+  /* Text Gray: RGB 104/102/114 (#686672) */
+
+  --color-background: hsl(223 33% 96%);
+  /* Very light blue-gray */
+  --color-foreground: hsl(250 6% 42%);
+  /* Text gray */
 
   --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(0 0% 13%);
+  --color-card-foreground: hsl(218 94% 27%);
 
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(0 0% 13%);
+  --color-popover-foreground: hsl(218 94% 27%);
 
-  --color-primary: hsl(0 0% 13%); /* Dark primary */
+  --color-primary: hsl(218 94% 27%);
+  /* Dark Blue #043487 */
   --color-primary-foreground: hsl(0 0% 100%);
 
-  --color-secondary: hsl(208 100% 40%); /* Professional Blue */
+  --color-secondary: hsl(200 79% 35%);
+  /* Medium Blue #1369A1 */
   --color-secondary-foreground: hsl(0 0% 100%);
 
-  --color-muted: hsl(0 0% 96%);
-  --color-muted-foreground: hsl(0 0% 45%);
+  --color-muted: hsl(223 33% 92%);
+  /* Light blue-gray muted */
+  --color-muted-foreground: hsl(250 6% 42%);
+  /* Text gray */
 
-  --color-accent: hsl(39 100% 50%); /* Energy Orange */
+  --color-accent: hsl(13 53% 50%);
+  /* Terracotta Orange #C3583B */
   --color-accent-foreground: hsl(0 0% 100%);
 
   --color-destructive: hsl(0 84% 60%);
   --color-destructive-foreground: hsl(0 0% 98%);
 
-  --color-border: hsl(0 0% 90%);
-  --color-input: hsl(0 0% 94%);
-  --color-ring: hsl(0 0% 13%);
+  --color-border: hsl(223 33% 85%);
+  /* Light blue-gray border */
+  --color-input: hsl(223 33% 90%);
+  --color-ring: hsl(218 94% 27%);
 
-  --color-chart-1: hsl(0 0% 13%);
-  --color-chart-2: hsl(208 100% 40%);
-  --color-chart-3: hsl(39 100% 50%);
-  --color-chart-4: hsl(208 80% 50%);
-  --color-chart-5: hsl(39 100% 60%);
+  --color-chart-1: hsl(218 94% 27%);
+  /* Dark Blue */
+  --color-chart-2: hsl(200 79% 35%);
+  /* Medium Blue */
+  --color-chart-3: hsl(13 53% 50%);
+  /* Terracotta */
+  --color-chart-4: hsl(223 33% 78%);
+  /* Light Blue-Gray */
+  --color-chart-5: hsl(250 6% 42%);
+  /* Gray */
 
-  --color-sidebar: hsl(0 0% 13%);
+  --color-sidebar: hsl(218 94% 27%);
   --color-sidebar-foreground: hsl(0 0% 98%);
-  --color-sidebar-primary: hsl(39 100% 50%);
-  --color-sidebar-primary-foreground: hsl(0 0% 13%);
-  --color-sidebar-accent: hsl(208 100% 45%);
+  --color-sidebar-primary: hsl(13 53% 50%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(200 79% 35%);
   --color-sidebar-accent-foreground: hsl(0 0% 100%);
-  --color-sidebar-border: hsl(0 0% 20%);
-  --color-sidebar-ring: hsl(39 100% 50%);
+  --color-sidebar-border: hsl(218 94% 20%);
+  --color-sidebar-ring: hsl(13 53% 50%);
 
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Montserrat', sans-serif;
-  
+
   --radius: 0.5rem;
 }
 
@@ -67,10 +82,17 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-bold;
   }
 }

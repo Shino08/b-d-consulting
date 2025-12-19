@@ -11,17 +11,17 @@ export function Footer() {
 
             <div className="container px-4 md:px-6 relative z-10 max-w-5xl mx-auto">
                 {/* Main Footer Row */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-2">
                     {/* Logo */}
                     <motion.img
                         src="/b_d_Consulting-Picsart-AiImageEnhancer.png"
                         alt="b&d Consulting"
-                        className="h-12 object-contain"
+                        className="h-28 object-contain"
                         whileHover={{ scale: 1.05 }}
                     />
 
                     {/* Navigation Links */}
-                    <nav className="flex flex-wrap justify-center gap-5 text-sm text-white/70">
+                    <nav className="flex flex-wrap justify-center gap-2 text-sm text-white/70">
                         <a href="#about" className="hover:text-white transition-colors">Nosotros</a>
                         <a href="#services" className="hover:text-white transition-colors">Servicios</a>
                         <a href="#experience" className="hover:text-white transition-colors">Experiencia</a>
